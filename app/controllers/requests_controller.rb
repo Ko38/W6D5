@@ -1,7 +1,8 @@
 class RequestsController < ApplicationController
 
     def index
-        render json: "Test"
+        @requests = Catrentalrequest.all.order(:start_date)
+        render :index
     end
 
     def new
@@ -14,7 +15,7 @@ class RequestsController < ApplicationController
         if new_request.save
             redirect_to requests_url
         else
-            render json: new_request.save.errors.full_messages, status: 422
+            render json: new_request.errors.full_messages, status: 422
         end
     end
 end

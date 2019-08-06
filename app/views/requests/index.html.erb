@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th> Start Date</th>
+        <th> End Date</th>
+    </tr>
+<% @requests.each do |r| %>
+    <tr>
+        <th> <%= r.start_date %> </th>
+        <th> <%= r.end_date %> </th>
+    </tr>
+    
+<% end %>
+
+</table>
