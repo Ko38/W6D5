@@ -1,0 +1,819 @@
+Started GET "/" for ::1 at 2019-08-04 14:57:34 -0700
+
+PG::ConnectionBad - fe_sendauth: no password supplied
+:
+
+Started POST "/__better_errors/71b27116c761b12b/variables" for ::1 at 2019-08-04 14:57:35 -0700
+Started GET "/" for ::1 at 2019-08-04 14:58:54 -0700
+
+PG::ConnectionBad - fe_sendauth: no password supplied
+:
+
+Started POST "/__better_errors/84fbe3e8a8ab0e23/variables" for ::1 at 2019-08-04 14:58:55 -0700
+Started GET "/" for ::1 at 2019-08-04 15:30:01 -0700
+
+PG::ConnectionBad - fe_sendauth: no password supplied
+:
+
+Started POST "/__better_errors/d713fa462383e0b3/variables" for ::1 at 2019-08-04 15:30:01 -0700
+Started GET "/" for ::1 at 2019-08-04 15:35:05 -0700
+
+PG::ConnectionBad - FATAL:  password authentication failed for user "Ko"
+:
+
+Started POST "/__better_errors/9b6c21a6a65245e6/variables" for ::1 at 2019-08-04 15:35:05 -0700
+Started GET "/" for ::1 at 2019-08-04 15:35:08 -0700
+
+PG::ConnectionBad - FATAL:  password authentication failed for user "Ko"
+:
+
+Started POST "/__better_errors/f5f436b684fc6b80/variables" for ::1 at 2019-08-04 15:35:09 -0700
+Started GET "/" for ::1 at 2019-08-04 15:36:06 -0700
+
+PG::ConnectionBad - FATAL:  password authentication failed for user "Ko"
+:
+
+Started POST "/__better_errors/14574e6ed54dfa48/variables" for ::1 at 2019-08-04 15:36:07 -0700
+Started GET "/" for ::1 at 2019-08-04 15:37:02 -0700
+
+PG::ConnectionBad - FATAL:  database "cats_99_development" does not exist
+:
+
+Started POST "/__better_errors/64afce1adfca8f32/variables" for ::1 at 2019-08-04 15:37:03 -0700
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2260121364129154575)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCats (20190802185825)
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE TABLE "cats" ("id" bigserial primary key, "birth_date" date NOT NULL, "color" character varying NOT NULL, "name" character varying NOT NULL, "sex" character varying(1) NOT NULL, "description" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190802185825_create_cats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190802185825"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCatrentalrequests (20190802231628)
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "catrentalrequests" ("id" bigserial primary key, "cat_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying DEFAULT 'PENDING', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190802231628_create_catrentalrequests.rb:3
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX  "index_catrentalrequests_on_cat_id" ON "catrentalrequests"  ("cat_id")[0m
+  ↳ db/migrate/20190802231628_create_catrentalrequests.rb:11
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190802231628"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-04 22:41:16.726124"], ["updated_at", "2019-08-04 22:41:16.726124"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2260121364129154575)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCat Destroy (1.0ms)[0m  [1m[31mDELETE FROM "cats"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Create (1.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1990-01-01"], ["color", "blue"], ["name", "Spotty"], ["sex", "M"], ["description", "Great cat"], ["created_at", "2019-08-04 22:41:37.270583"], ["updated_at", "2019-08-04 22:41:37.270583"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2001-04-17"], ["color", "brown"], ["name", "Lucky"], ["sex", "F"], ["description", "Decent cat"], ["created_at", "2019-08-04 22:41:37.281808"], ["updated_at", "2019-08-04 22:41:37.281808"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-12-20"], ["color", "white"], ["name", "Tom"], ["sex", "M"], ["description", "Tom likes Jerry"], ["created_at", "2019-08-04 22:41:37.285025"], ["updated_at", "2019-08-04 22:41:37.285025"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+Started GET "/" for ::1 at 2019-08-04 15:42:11 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (11.8ms)
+Completed 200 OK in 125ms (Views: 62.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for ::1 at 2019-08-04 15:42:15 -0700
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (80.9ms)
+Completed 200 OK in 1919ms (Views: 1888.8ms | ActiveRecord: 8.3ms)
+
+
+  [1m[36mCatrentalrequest Load (8.3ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests"[0m
+  [1m[36mCatrentalrequest Load (0.4ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" = $1[0m  [["id", 1]]
+  [1m[35m (14.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCat Destroy (11.4ms)[0m  [1m[31mDELETE FROM "cats"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Create (3.2ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1990-01-01"], ["color", "blue"], ["name", "Spotty"], ["sex", "M"], ["description", "Great cat"], ["created_at", "2019-08-05 07:58:25.259582"], ["updated_at", "2019-08-05 07:58:25.259582"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2001-04-17"], ["color", "brown"], ["name", "Lucky"], ["sex", "F"], ["description", "Decent cat"], ["created_at", "2019-08-05 07:58:25.267092"], ["updated_at", "2019-08-05 07:58:25.267092"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-12-20"], ["color", "white"], ["name", "Tom"], ["sex", "M"], ["description", "Tom likes Jerry"], ["created_at", "2019-08-05 07:58:25.270423"], ["updated_at", "2019-08-05 07:58:25.270423"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCat Destroy (8.0ms)[0m  [1m[31mDELETE FROM "cats"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCatrentalrequest Destroy (1.1ms)[0m  [1m[31mDELETE FROM "catrentalrequests"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.9ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1990-01-01"], ["color", "blue"], ["name", "Spotty"], ["sex", "M"], ["description", "Great cat"], ["created_at", "2019-08-05 08:00:16.022969"], ["updated_at", "2019-08-05 08:00:16.022969"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2001-04-17"], ["color", "brown"], ["name", "Lucky"], ["sex", "F"], ["description", "Decent cat"], ["created_at", "2019-08-05 08:00:16.027365"], ["updated_at", "2019-08-05 08:00:16.027365"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-12-20"], ["color", "white"], ["name", "Tom"], ["sex", "M"], ["description", "Tom likes Jerry"], ["created_at", "2019-08-05 08:00:16.030939"], ["updated_at", "2019-08-05 08:00:16.030939"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mCatrentalrequest Load (1.9ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCat Destroy (7.9ms)[0m  [1m[31mDELETE FROM "cats"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCatrentalrequest Destroy (1.3ms)[0m  [1m[31mDELETE FROM "catrentalrequests"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.9ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1990-01-01"], ["color", "blue"], ["name", "Spotty"], ["sex", "M"], ["description", "Great cat"], ["created_at", "2019-08-05 08:07:04.580306"], ["updated_at", "2019-08-05 08:07:04.580306"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2001-04-17"], ["color", "brown"], ["name", "Lucky"], ["sex", "F"], ["description", "Decent cat"], ["created_at", "2019-08-05 08:07:04.584603"], ["updated_at", "2019-08-05 08:07:04.584603"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-12-20"], ["color", "white"], ["name", "Tom"], ["sex", "M"], ["description", "Tom likes Jerry"], ["created_at", "2019-08-05 08:07:04.587881"], ["updated_at", "2019-08-05 08:07:04.587881"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mCatrentalrequest Create (1.6ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 10], ["start_date", "2019-08-01"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:07:04.708922"], ["updated_at", "2019-08-05 08:07:04.708922"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mCatrentalrequest Create (0.7ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 11], ["start_date", "2019-08-03"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:07:04.719418"], ["updated_at", "2019-08-05 08:07:04.719418"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mCatrentalrequest Create (0.5ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 12], ["start_date", "2019-08-02"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:07:04.727097"], ["updated_at", "2019-08-05 08:07:04.727097"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.8ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01')[0m  [["id", 3], ["cat_id", 10]]
+  [1m[36mCatrentalrequest Load (0.4ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mCatrentalrequest Load (0.6ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-03')[0m  [["id", 4], ["cat_id", 11]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCat Destroy (7.5ms)[0m  [1m[31mDELETE FROM "cats"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCatrentalrequest Destroy (1.3ms)[0m  [1m[31mDELETE FROM "catrentalrequests"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.9ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1990-01-01"], ["color", "blue"], ["name", "Spotty"], ["sex", "M"], ["description", "Great cat"], ["created_at", "2019-08-05 08:08:37.073843"], ["updated_at", "2019-08-05 08:08:37.073843"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2001-04-17"], ["color", "brown"], ["name", "Lucky"], ["sex", "F"], ["description", "Decent cat"], ["created_at", "2019-08-05 08:08:37.077838"], ["updated_at", "2019-08-05 08:08:37.077838"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-12-20"], ["color", "white"], ["name", "Tom"], ["sex", "M"], ["description", "Tom likes Jerry"], ["created_at", "2019-08-05 08:08:37.081410"], ["updated_at", "2019-08-05 08:08:37.081410"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mCatrentalrequest Create (0.9ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 13], ["start_date", "2019-08-01"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:08:37.133180"], ["updated_at", "2019-08-05 08:08:37.133180"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mCatrentalrequest Create (0.4ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 13], ["start_date", "2019-08-01"], ["end_date", "2019-08-03"], ["created_at", "2019-08-05 08:08:37.138748"], ["updated_at", "2019-08-05 08:08:37.138748"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mCatrentalrequest Create (0.4ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 13], ["start_date", "2019-08-01"], ["end_date", "2019-08-04"], ["created_at", "2019-08-05 08:08:37.143362"], ["updated_at", "2019-08-05 08:08:37.143362"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mCatrentalrequest Create (0.5ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 14], ["start_date", "2019-08-03"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:08:37.147606"], ["updated_at", "2019-08-05 08:08:37.147606"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mCatrentalrequest Create (0.4ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 15], ["start_date", "2019-08-02"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:08:37.152092"], ["updated_at", "2019-08-05 08:08:37.152092"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.9ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01')[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.1ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (3.3ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND (start_date < 2019-08-05 OR end_date > 2019-08-01)[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.2ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND (start_date < 2019-08-05 OR end_date > 2019-08-01) LIMIT $3[0m  [["id", 6], ["cat_id", 13], ["LIMIT", 11]]
+  [1m[36mCatrentalrequest Load (1.3ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (2.0ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND (start_date <= 2019-08-05 OR end_date >= 2019-08-01)[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.5ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND (start_date <= 2019-08-05 OR end_date >= 2019-08-01) LIMIT $3[0m  [["id", 6], ["cat_id", 13], ["LIMIT", 11]]
+  [1m[36mCatrentalrequest Load (0.8ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.7ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND (start_date <= 2019-08-05 OR end_date >= 2019-08-01)[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.1ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND (start_date <= 2019-08-05 OR end_date >= 2019-08-01) LIMIT $3[0m  [["id", 6], ["cat_id", 13], ["LIMIT", 11]]
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.9ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (start_date > 2019-08-05 OR end_date < 2019-08-01)[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.1ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (start_date > 2019-08-05 OR end_date < 2019-08-01) LIMIT $3[0m  [["id", 6], ["cat_id", 13], ["LIMIT", 11]]
+  [1m[36mCatrentalrequest Load (1.4ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.8ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01')[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.2ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.4ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (2019-08-01 > :end_date OR 2019-08-05 < :start_date)[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.1ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (2019-08-01 > :end_date OR 2019-08-05 < :start_date) LIMIT $3[0m  [["id", 6], ["cat_id", 13], ["LIMIT", 11]]
+  [1m[36mCatrentalrequest Load (0.6ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.5ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (2019-08-01 > :end_date OR 2019-08-05 < :start_date)[0m  [["id", 6], ["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."id" != $1 AND "catrentalrequests"."cat_id" = $2 AND NOT (2019-08-01 > :end_date OR 2019-08-05 < :start_date) LIMIT $3[0m  [["id", 6], ["cat_id", 13], ["LIMIT", 11]]
+  [1m[36mCatrentalrequest Load (1.3ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.7ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.4ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.8ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 6], ["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.8ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 10], ["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.6ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 13], ["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.2ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.1ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.4ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 13], ["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.7ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 13], ["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.6ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1[0m  [["cat_id", 13]]
+  [1m[36mCatrentalrequest Load (0.5ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (0.4ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 13], ["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT "catrentalrequests".* FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" != $2 AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01')[0m  [["cat_id", 13], ["id", 6]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCat Destroy (9.5ms)[0m  [1m[31mDELETE FROM "cats"[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCatrentalrequest Destroy (1.4ms)[0m  [1m[31mDELETE FROM "catrentalrequests"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.9ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1990-01-01"], ["color", "blue"], ["name", "Spotty"], ["sex", "M"], ["description", "Great cat"], ["created_at", "2019-08-05 08:26:40.115934"], ["updated_at", "2019-08-05 08:26:40.115934"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2001-04-17"], ["color", "brown"], ["name", "Lucky"], ["sex", "F"], ["description", "Decent cat"], ["created_at", "2019-08-05 08:26:40.120414"], ["updated_at", "2019-08-05 08:26:40.120414"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-12-20"], ["color", "white"], ["name", "Tom"], ["sex", "M"], ["description", "Tom likes Jerry"], ["created_at", "2019-08-05 08:26:40.123558"], ["updated_at", "2019-08-05 08:26:40.123558"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mCatrentalrequest Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" IS NOT NULL AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 16], ["LIMIT", 1]]
+  ↳ app/models/catrentalrequest.rb:24
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mCatrentalrequest Create (0.8ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["cat_id", 16], ["start_date", "2019-08-01"], ["end_date", "2019-08-05"], ["created_at", "2019-08-05 08:26:40.180079"], ["updated_at", "2019-08-05 08:26:40.180079"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mCatrentalrequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" IS NOT NULL AND NOT (start_date > '2019-08-03' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 16], ["LIMIT", 1]]
+  ↳ app/models/catrentalrequest.rb:24
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mCatrentalrequest Create (0.5ms)[0m  [1m[32mINSERT INTO "catrentalrequests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["cat_id", 16], ["start_date", "2019-08-01"], ["end_date", "2019-08-03"], ["status", "APPROVED"], ["created_at", "2019-08-05 08:26:40.187971"], ["updated_at", "2019-08-05 08:26:40.187971"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCatrentalrequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" IS NOT NULL AND NOT (start_date > '2019-08-04' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 16], ["LIMIT", 1]]
+  ↳ app/models/catrentalrequest.rb:24
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:16
+  [1m[36mCatrentalrequest Load (1.0ms)[0m  [1m[34mSELECT  "catrentalrequests".* FROM "catrentalrequests" ORDER BY "catrentalrequests"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCatrentalrequest Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" != $2 AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $3[0m  [["cat_id", 16], ["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatrentalrequest Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" IS NOT NULL AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatrentalrequest Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" IS NOT NULL AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 16], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatrentalrequest Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "catrentalrequests" WHERE "catrentalrequests"."cat_id" = $1 AND "catrentalrequests"."id" IS NOT NULL AND NOT (start_date > '2019-08-05' OR end_date < '2019-08-01') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 16], ["LIMIT", 1]]
+  [1m[36mCat Load (1.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2019-08-05 01:30:06 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (11.5ms)
+Completed 200 OK in 117ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/Cats" for ::1 at 2019-08-05 01:30:09 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/Cats"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/Cats" for ::1 at 2019-08-05 02:23:16 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/Cats"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/Cats/index" for ::1 at 2019-08-05 02:23:41 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/Cats/index"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-05 09:04:30 -0700
+  [1m[35m (21.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (19.4ms)
+Completed 200 OK in 168ms (Views: 110.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests" for ::1 at 2019-08-05 09:04:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/requests"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/cats" for ::1 at 2019-08-05 09:04:46 -0700
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 2190ms (Views: 2104.2ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-08-05 09:05:06 -0700
+
+AbstractController::ActionNotFound - The action 'index' could not be found for RequestsController:
+
+Started POST "/__better_errors/639d727e5790e54a/variables" for ::1 at 2019-08-05 09:05:08 -0700
+Started GET "/requests" for ::1 at 2019-08-05 09:05:42 -0700
+Processing by RequestsController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests" for ::1 at 2019-08-05 09:10:15 -0700
+Processing by RequestsController#index as HTML
+Completed 406 Not Acceptable in 1745ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - RequestsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/80ce47566ebc4b4d/variables" for ::1 at 2019-08-05 09:10:17 -0700
+Started GET "/requests/new" for ::1 at 2019-08-05 09:10:31 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (12.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:2
+  Rendered requests/new.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 333ms (Views: 157.1ms | ActiveRecord: 154.4ms)
+
+
+Started GET "/cats/new" for ::1 at 2019-08-05 09:14:45 -0700
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (1.2ms)
+  Rendered cats/new.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 151ms (Views: 149.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 10:09:10 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:3
+  Rendered requests/new.html.erb within layouts/application (987.0ms)
+Completed 500 Internal Server Error in 1154ms (ActiveRecord: 0.8ms)
+
+
+
+NameError - undefined local variable or method `cat' for #<#<Class:0x000000000d73be48>:0x000000000c5f4630>
+Did you mean?  @cats:
+  app/views/requests/new.html.erb:11:in `_app_views_requests_new_html_erb__277985030_103770680'
+  app/controllers/requests_controller.rb:9:in `new'
+
+Started POST "/__better_errors/91e4d765f8c801cc/variables" for ::1 at 2019-08-05 10:09:13 -0700
+Started GET "/requests/new" for ::1 at 2019-08-05 10:09:36 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:3
+  Rendered requests/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 116ms (Views: 115.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 10:10:50 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:3
+  Rendered requests/new.html.erb within layouts/application (579.6ms)
+Completed 500 Internal Server Error in 717ms (ActiveRecord: 0.5ms)
+
+
+
+NameError - undefined local variable or method `cat' for #<#<Class:0x000000000d73be48>:0x000000000dad2200>
+Did you mean?  @cats:
+  app/views/requests/new.html.erb:12:in `_app_views_requests_new_html_erb__277985030_114722740'
+  app/controllers/requests_controller.rb:9:in `new'
+
+Started POST "/__better_errors/079e1da3d78a3ad3/variables" for ::1 at 2019-08-05 10:10:51 -0700
+Started GET "/requests/new" for ::1 at 2019-08-05 10:10:59 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:3
+  Rendered requests/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 143ms (Views: 141.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 10:12:04 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (2.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:3
+  Rendered requests/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 189ms (Views: 185.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 10:13:59 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 121ms (Views: 119.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 10:18:33 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 203ms (Views: 172.4ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:15:25 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (6.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 166ms (Views: 158.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:15:47 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (1.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 135ms (Views: 133.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:18:15 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (109.0ms)
+Completed 200 OK in 228ms (Views: 108.8ms | ActiveRecord: 95.9ms)
+
+
+Started POST "/requests" for ::1 at 2019-08-05 13:18:27 -0700
+Processing by RequestsController#create as HTML
+  Parameters: {"request"=>{"name"=>"16", "start_date"=>"2019-08-05", "end_date"=>"2019-08-09"}}
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 5.3ms)
+
+
+
+ActiveModel::UnknownAttributeError - unknown attribute 'name' for Catrentalrequest.:
+  app/controllers/requests_controller.rb:13:in `create'
+
+Started POST "/__better_errors/bdcf2fe2b0ac4725/variables" for ::1 at 2019-08-05 13:18:27 -0700
+Started GET "/requests/new" for ::1 at 2019-08-05 13:18:49 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 122ms (Views: 107.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:18:52 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 115ms (Views: 114.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/requests" for ::1 at 2019-08-05 13:19:00 -0700
+Processing by RequestsController#create as HTML
+  Parameters: {"request"=>{"name"=>"16", "start_date"=>"2019-08-05", "end_date"=>"2019-08-08"}}
+Unpermitted parameter: :name
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 30085ms (ActiveRecord: 4.9ms)
+
+
+Started POST "/requests" for ::1 at 2019-08-05 13:19:38 -0700
+Processing by RequestsController#create as HTML
+  Parameters: {"request"=>{"name"=>"16", "start_date"=>"2019-08-05", "end_date"=>"2019-08-08"}}
+Unpermitted parameter: :name
+No template found for RequestsController#create, rendering head :no_content
+Completed 204 No Content in 1939ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:20:15 -0700
+  [1m[35m (16.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 1120ms (Views: 1078.5ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:20:38 -0700
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 159ms (Views: 138.8ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/requests" for ::1 at 2019-08-05 13:20:44 -0700
+Processing by RequestsController#create as HTML
+  Parameters: {"request"=>{"name"=>"16", "start_date"=>"2019-08-05", "end_date"=>"2019-08-08"}}
+Unpermitted parameter: :name
+Started POST "/requests" for ::1 at 2019-08-05 13:21:19 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RequestsController#create as HTML
+  Parameters: {"request"=>{"name"=>"16", "start_date"=>"2019-08-05", "end_date"=>"2019-08-08"}}
+Unpermitted parameter: :name
+Started GET "/requests" for 127.0.0.1 at 2019-08-05 13:21:52 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RequestsController#index as HTML
+Started GET "/requests" for 127.0.0.1 at 2019-08-05 13:21:53 -0700
+Processing by RequestsController#index as HTML
+Completed 406 Not Acceptable in 1996ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - RequestsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started GET "/requests/new" for ::1 at 2019-08-05 13:21:56 -0700
+Completed 406 Not Acceptable in 2649ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - RequestsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Processing by RequestsController#new as HTML
+  Rendering requests/new.html.erb within layouts/application
+  [1m[36mCat Load (1.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/requests/new.html.erb:5
+  Rendered requests/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 528ms (Views: 484.2ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/requests" for ::1 at 2019-08-05 13:22:03 -0700
+Processing by RequestsController#create as HTML
+  Parameters: {"request"=>{"cat_id"=>"16", "start_date"=>"2019-08-05", "end_date"=>"2019-08-08"}}

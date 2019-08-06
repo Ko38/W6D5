@@ -1,0 +1,49 @@
+<% if type == :new %>
+  <%action_choice = cats_url%>
+<%else%>
+  <%action_choice = cat_url(cat)%>
+<%end%>
+
+<form action="<%=action_choice%>" method= "post">
+  <% if type == :edit%>
+    <input type="hidden" name="_method" value="patch">
+  <%end%>
+
+<label for = "name"> Name: 
+  <input type= "text" id="name" name="cat[name]" value ="<%= cat.name%>" >
+</label>
+
+<label for = "birth_date"> Birthdate: 
+  <input type= "date" id="birth_date" name="cat[birth_date]" value ="<%= cat.birth_date%>" >
+</label>
+<br>
+<label for = "gender"> Gender: 
+<br>
+<%if cat.sex == "M"%>
+  <input type= "radio" id="gender" name="cat[sex]" value ="M" checked> Male <br>
+  <input type= "radio" id="gender" name="cat[sex]" value ="F"> Female <br>
+<%else%>
+  <input type= "radio" id="gender" name="cat[sex]" value ="M" > Male <br>
+  <input type= "radio" id="gender" name="cat[sex]" value ="F" checked> Female <br>
+<%end%>
+</label>
+
+<label for = "color"> Color: 
+<select id="color" name="cat[color]">
+<%cat.possible_colors.each do |color|%>
+  <%if color == cat.color%>
+  <option value ="<%=color%>" selected="selected"> <%=color%> </option>
+  <%else%>
+  <option value ="<%=color%>"> <%=color%></option>
+  <%end%>
+<%end%>
+</select>
+</label>
+
+<label for = "description"> Description: 
+  <textarea type="text" id="description" name="cat[description]" value ="<%= cat.description%>" ><%=cat.description%>
+  </textarea>
+</label>
+
+<input type="submit" value = "submit">
+</form>

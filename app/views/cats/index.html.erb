@@ -1,0 +1,19 @@
+
+<ul>
+  <%@cats.each do |cat|%>
+ <li>
+  <ul>
+    <li><%=cat.name%></li>
+    <li><%=cat.age%></li>
+    <li><%=cat.sex%></li>
+    <li><%=cat.color%></li>
+    <li><%=cat.description%></li>
+    <li><a href="<%=cat_url(cat)%>">Cat's Page </a></li>
+  </ul>
+  <br>
+
+  </li>
+  <%end%>
+</ul>
+
+<a href="<%=new_cat_url%>">New Cat </a>
